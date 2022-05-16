@@ -1,9 +1,56 @@
+import {Container, Nav, Navbar, NavItem} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="navbar-bg">
-            NAVBAR GOES HERE
-        </div>
+        <Navbar sticky='top' expand='xs' className="navbar-bg">
+            <Container className='mr-auto'>
+                  <Nav className='ms-auto' navbar>
+                      <NavItem>
+                          <NavLink className='nav-link' to='/'>
+                            <i className='fa fa-home fa-lg' />
+                          </NavLink>
+                      </NavItem>
+                      <NavItem>
+                          <NavLink className='nav-link' to='/create'>
+                            Create
+                          </NavLink>
+                      </NavItem>
+                      <NavItem>
+                          <NavLink className='nav-link' to='/memorize'>
+                            Memorize
+                          </NavLink>
+                      </NavItem>
+                      <NavItem>
+                          <NavLink className='nav-link' to='/games'>
+                            Games
+                          </NavLink>
+                      </NavItem>
+                  </Nav>
+            </Container>
+            <Container class='ml-auto'>
+                <Nav className='flex-row-reverse' navbar>
+                    
+                <NavItem>
+                        <NavLink className='nav-link' to="/">
+                            <i class="fa fa-lg fa-cog"></i>
+                        </NavLink>
+                    </NavItem>
+                    
+                    <NavItem>
+                        <NavLink className='nav-link' to="/">
+                            <i class="fa fa-lg fa-question-circle"></i>
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className='nav-link' to="/">
+                            <i class="fa fa-lg fa-bar-chart"></i>
+                        </NavLink>
+                    </NavItem>
+                    
+                </Nav>
+            </Container>
+        </Navbar>
         );
 };
 
