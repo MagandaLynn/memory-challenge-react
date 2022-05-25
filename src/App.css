@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 .navbar-bg{
   background: #eee;
@@ -7,6 +6,16 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn-style{
+  margin: 10px;
+}
+
+.modal-link:hover{
+  cursor: pointer;
 }
 
 .row-content {

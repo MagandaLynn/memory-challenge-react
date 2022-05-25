@@ -28,23 +28,23 @@ const Header = () => {
                       </NavItem>
                   </Nav>
             </Container>
-            <Container class='ml-auto'>
+            <Container className='ml-auto'>
                 <Nav className='flex-row-reverse' navbar>
                     
                 <NavItem>
                         <NavLink className='nav-link' to="/">
-                            <i class="fa fa-lg fa-cog"></i>
+                            <i className="fa fa-lg fa-cog"></i>
                         </NavLink>
                     </NavItem>
                     
                     <NavItem>
                         <NavLink className='nav-link' to="/">
-                            <i class="fa fa-lg fa-question-circle"></i>
+                            <i className="fa fa-lg fa-question-circle"></i>
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to="/">
-                            <i class="fa fa-lg fa-bar-chart"></i>
+                            <i className="fa fa-lg fa-bar-chart"></i>
                         </NavLink>
                     </NavItem>
                     
