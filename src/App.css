@@ -1,21 +1,25 @@
 .App {
 }
-.navbar-bg{
-  background: #eee;
-}
 
 body {
   font-family: 'Open Sans', sans-serif;
-  padding: 5px;
-  margin: 5px;
+}
+.navbar-bg{
+  background: #ddd;
 }
 
 .btn-style{
-  margin: 10px;
+  margin: 5px;
 }
 
-.modal-link:hover{
-  cursor: pointer;
+.modal-link{
+  background: none;
+	color: blue;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .row-content {
@@ -42,4 +46,47 @@ body {
 .page-exit-active {
   opacity: 0;
   transition: 300ms ease-in;
+}
+
+
+.card-style {
+    margin: 5px;
+    width: 95%;
+    min-height: 95%;
+    cursor: pointer;
+}
+
+.large-icon{
+  font-size: 3em;
+  font-weight: 700;
+
+}
+
+.box{
+  width: 80%;
+  min-height: 120px;
+  position: relative;
+}
+.card-sm-1{
+  background: #888;
+  height: 75px;
+  width: 60px;
+  border-radius: 10px;
+  transform: rotate(-20deg);
+  position: absolute;
+  box-shadow: 1px 1px 2px #0008;
+  top: 3px;
+  left: 2px;
+}
+.card-sm-2{
+  background: #333;
+  height: 75px;
+  width: 60px;
+  border-radius: 10px;
+  transform: rotate(20deg);
+  position: absolute;
+  box-shadow: 1px 1px 2px #0008;
+  top: 10px;
+  right: 2px;
+
 }

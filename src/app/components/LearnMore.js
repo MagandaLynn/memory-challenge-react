@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button, Modal, ModalBody, ModalHeader } from "reactstrap"
+import { Modal, ModalBody, ModalHeader } from "reactstrap"
 
 const LearnMore = () => {
     const [modalOpen,setModalOpen]=useState(false);
   return (
       <>
-        <a  onClick={()=>setModalOpen(true)} className="modal-link" color='info'>Learn More</a>
+        <btn onClick={()=>setModalOpen(true)} className="modal-link">Learn More</btn>
         <Modal isOpen={modalOpen}>
             <ModalHeader toggle={()=>setModalOpen(false)}>
                 About
@@ -19,6 +18,7 @@ const LearnMore = () => {
                             <li>set goals</li>
                             <li>track progress</li>
                         </ul>
+            <p><strong>To login as a guest, enter <span style={{color: 'blue'}}>'guest'</span> into email and password fields</strong></p>
             </ModalBody>
         </Modal>
       </>

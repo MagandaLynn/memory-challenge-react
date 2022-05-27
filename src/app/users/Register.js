@@ -1,19 +1,25 @@
-import { ErrorMessage, Field, Formik } from "formik";
+import { ErrorMessage,Form, Field, Formik } from "formik";
 import { useState } from "react";
-import { Button, Col, Form, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
+import { useDispatch } from "react-redux";
+import { Button, Col, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { validateRegisterForm } from "../utils/validateRegisterForm";
+import { addUser } from "./usersSlice";
 
 const Register = () => {
   const [modalOpen,setModalOpen]=useState(false);
-    
-  const handleSubmit = (values, {resetForm})=>{
-    console.log(values);
-    console.log(JSON.stringify(values))
-    resetForm();
+  const dispatch = useDispatch();    
+  const handleSubmit = (values)=>{
+    const newUser={
+        name: values.firstName,
+        email: values.email,
+        password: values.password
+    }    
+    dispatch(addUser(newUser));
+    setModalOpen(false);
   }
   return (
       <>
-        <p>Don't have an account? <a onClick={()=>setModalOpen(true)} className="modal-link">Register</a></p>
+        <p>Don't have an account? <btn onClick={()=>setModalOpen(true)} className="modal-link">Register</btn></p>
         <Modal isOpen={modalOpen}>
             <ModalHeader toggle={()=>setModalOpen(false)}>
                 Register
@@ -22,14 +28,12 @@ const Register = () => {
                 <Formik
                     initialValues={{
                         firstName:'',
-                        lastname:'',
                         email:'',
                         password:'',
                         confirmPassword:''
                     }}
                     onSubmit={handleSubmit}
                     validate={validateRegisterForm}
-                        
                 >
                     <Form>
                         <FormGroup row>
@@ -45,18 +49,6 @@ const Register = () => {
                             </Col>
                         </FormGroup>
                         
-                        <FormGroup row>
-                            <Col sm='10' className="mx-auto">
-                                <Field 
-                                name='lastName'
-                                placeholder='Last Name'
-                                className='form-control' 
-                                />
-                                <ErrorMessage name='lastName'>
-                                {(msg)=><p className='text-danger'>{msg}</p>}
-                                </ErrorMessage>
-                            </Col>
-                        </FormGroup>
                         <FormGroup row>
                             <Col sm='10' className="mx-auto">
                                 <Field 
@@ -94,14 +86,14 @@ const Register = () => {
                                 </ErrorMessage>
                             </Col>
                         </FormGroup>
-                            <FormGroup row>
+                        <FormGroup row>
                             <Col xs={{size: 2, offset: 6}}>
-                                <Button onClick={()=>setModalOpen(false)} color='secondary'>Cancel</Button>
+                                <Button type='button' onClick={()=>setModalOpen(false)} color='secondary'>Cancel</Button>
                             </Col>
                             <Col xs='3'>
                                 <Button type='submit' color='primary'>Sign Up</Button>
                             </Col>
-                            </FormGroup>
+                        </FormGroup>
                     </Form>
                     
                 </Formik>

@@ -3,12 +3,11 @@ export const validateLoginForm = (values) =>{
     const {email,password} = values;
     
     const emailTest = /(.+)@(.+){2,}\.(.+){2,}/i;
-
-    if(!emailTest.test(email)){
+    if(email!=='guest' && !emailTest.test(email)){
         errors.email="Please enter a valid email"
     }
     if(!password){
-        errors.password="Required"
+        errors.password="Password required"
     }
     return errors;
 }

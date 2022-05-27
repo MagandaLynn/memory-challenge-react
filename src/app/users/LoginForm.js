@@ -4,7 +4,7 @@ import { validateLoginForm } from "../utils/validateLoginForm";
 
 
 const LoginForm = () => {
-
+  
   const handleSubmit = (values, {resetForm})=>{
     console.log(values);
     console.log(JSON.stringify(values))
@@ -46,6 +46,7 @@ const LoginForm = () => {
             <Field 
               name='password'
               placeholder="Password"
+              type="password"
               className='form-control' 
               />
               

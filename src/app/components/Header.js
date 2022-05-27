@@ -7,22 +7,22 @@ const Header = () => {
             <Container className='mr-auto'>
                   <Nav className='ms-auto' navbar>
                       <NavItem>
-                          <NavLink className='nav-link' to='/'>
+                          <NavLink className='nav-link px-1' to='/'>
                             <i className='fa fa-home fa-lg' />
                           </NavLink>
                       </NavItem>
                       <NavItem>
-                          <NavLink className='nav-link' to='/create'>
+                          <NavLink className='nav-link px-1' to='/create'>
                             Create
                           </NavLink>
                       </NavItem>
                       <NavItem>
-                          <NavLink className='nav-link' to='/memorize'>
+                          <NavLink className='nav-link px-1' to='/memorize'>
                             Memorize
                           </NavLink>
                       </NavItem>
                       <NavItem>
-                          <NavLink className='nav-link' to='/games'>
+                          <NavLink className='nav-link px-1' to='/games'>
                             Games
                           </NavLink>
                       </NavItem>
@@ -32,18 +32,18 @@ const Header = () => {
                 <Nav className='flex-row-reverse' navbar>
                     
                 <NavItem>
-                        <NavLink className='nav-link' to="/">
+                        <NavLink className='nav-link px-1' to="/">
                             <i className="fa fa-lg fa-cog"></i>
                         </NavLink>
                     </NavItem>
                     
                     <NavItem>
-                        <NavLink className='nav-link' to="/">
+                        <NavLink className='nav-link px-1' to="/">
                             <i className="fa fa-lg fa-question-circle"></i>
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink className='nav-link' to="/">
+                        <NavLink className='nav-link px-1' to="/">
                             <i className="fa fa-lg fa-bar-chart"></i>
                         </NavLink>
                     </NavItem>
