@@ -15,7 +15,7 @@ export const GAMESMENU = [
         id:3,
         type: 'games',
         title: 'Speed P-A-O',
-        desc: 'fa fa-window-restore fa-4x',
+        icon: 'fa fa-window-restore fa-4x',
         bg: '#005f73'
     },
 ]
