@@ -1,16 +1,15 @@
 import { Container, Row } from "reactstrap"
-import GamesPalace from "../components/memoryPalace/GamesPalace"
-import GamesNumbers from "../components/numbers/GamesNumbers"
-import GamesPao from "../components/pao/GamesPao"
+import Menu from "../components/Menu"
+import { GAMESMENU } from "../shared/GAMESMENU"
 
 const GamesPage = () => {
+  const gamesMenu=GAMESMENU;
   return (
     <Container>
       <Row className="mt-4">
-        <GamesPalace />
-        <GamesNumbers />
-        <GamesPao />
+          <Menu menuItems={gamesMenu} />
       </Row>
+      
     </Container>
   )
 }

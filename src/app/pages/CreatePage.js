@@ -1,17 +1,13 @@
 import { Container, Row } from "reactstrap"
-import { CreateLists } from "../components/lists/CreateLists"
-import CreateMemoryPalace from "../components/memoryPalace/CreateMemoryPalace"
-import CreateNumbers from "../components/numbers/CreateNumbers"
-import CreatePao from "../components/pao/CreatePao"
+import Menu from "../components/Menu"
+import {CREATEMENU} from '../shared/CREATEMENU'
 
 const CreatePage = () => {
+  const createMenu=CREATEMENU;
   return (
     <Container>
       <Row className="mt-4">
-        <CreateMemoryPalace />
-        <CreateLists />
-        <CreateNumbers />
-        <CreatePao />
+          <Menu menuItems={createMenu} />
       </Row>
       
     </Container>
