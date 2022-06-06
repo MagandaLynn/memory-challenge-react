@@ -2,8 +2,9 @@ import { ErrorMessage,Form, Field, Formik } from "formik";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Button, Col, FormGroup, Modal, ModalBody, ModalHeader } from "reactstrap";
-import { validateRegisterForm } from "../utils/validateRegisterForm";
-import { addUser } from "./usersSlice";
+import { validateRegisterForm } from "../../app/utils/validateRegisterForm";
+import { addUserGoal } from "../goals/goalsSlice";
+import { registerUser, setCurrentUser } from "./usersSlice";
 
 const Register = () => {
   const [modalOpen,setModalOpen]=useState(false);
@@ -12,9 +13,11 @@ const Register = () => {
     const newUser={
         name: values.firstName,
         email: values.email,
-        password: values.password
+        password: values.password,
     }    
-    dispatch(addUser(newUser));
+    dispatch(registerUser(newUser));
+    dispatch(setCurrentUser(newUser));
+    dispatch(addUserGoal({text: "Create your first memory palace", completed: false, user: newUser.email}))
     setModalOpen(false);
   }
   return (

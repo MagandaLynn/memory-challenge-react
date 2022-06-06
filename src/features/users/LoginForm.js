@@ -1,21 +1,34 @@
-import { Button,Label,Col,FormGroup } from "reactstrap";
+import { Button,Label,Col,FormGroup, Modal, ModalBody } from "reactstrap";
 import {Formik, Field, Form, ErrorMessage} from 'formik'
-import { validateLoginForm } from "../utils/validateLoginForm";
+import { validateLoginForm } from "../../app/utils/validateLoginForm";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser, setCurrentUser } from "./usersSlice";
+import { useState } from "react";
 
 
 const LoginForm = () => {
-  
-  const handleSubmit = (values, {resetForm})=>{
-    console.log(values);
-    console.log(JSON.stringify(values))
-    resetForm();
+  const [loginError,setLoginError]=useState(false);
+  const currentUser=useSelector(selectCurrentUser);
+  const dispatch=useDispatch();
+  const handleSubmit= ({email, password})=>{
+    setLoginError()
+    const userInfo = { 
+        id: Date.now(),
+        email: email,
+        name: 'Guest',
+        password: password   
+    }
+    dispatch(setCurrentUser(userInfo));
+    if(!currentUser){
+      setLoginError(true)
+    }
   }
-
+    
   return (
     <Formik
       initialValues = {{
-        email: '',
-        password: '',
+        email: 'guest',
+        password: 'guest',
         rememberMe: false,
       }}
       onSubmit={handleSubmit}
@@ -72,9 +85,12 @@ const LoginForm = () => {
         <FormGroup row>
           <Col >
             <Button type='submit' color='primary'>Login</Button>
-          </Col>
+            {loginError?<p className="text-danger">Please enter valid username and password</p>:null}
+            
+            </Col>
         </FormGroup>
       </Form>
+
     </Formik>
   )
 }
